@@ -1,0 +1,25 @@
+{
+    "animais": [
+        {
+            "nome": "Planária",
+            "descricao": "Medindo cerca de 1,5cm de comprimento, esses platelmintos podem ser encontrados em córregos, lagos e lugares úmidos. Locomovem-se com ajuda de cílios e alimentam-se de moluscos, de outros vermes e de cadáveres de animais maiores, entre outros exemplos.",
+            "reino": "Animal"
+        },
+        {
+            "nome": "Protozoário",
+            "descricao": "Organismos unicelulares encontrados em diferentes ambientes aquáticos e úmidos. Podem se movimentar com cílios, como o Paramecium, ou com flagelos, como é o caso do Tripanosoma cruzi.",
+            "reino": "Protista"
+        },
+        {
+            "nome": "Minhoca",
+            "descricao": "São animais predominantemente noturnos, sem sistema auditivo nem visual. Tem o corpo coberto de anéis, que auxiliam na locomoção. Sendo hermafroditas, reproduzem-se sexuadamente com troca de gametas e assexuadamente, por regeneração.",
+            "reino": "Animal"
+        },
+        {
+            "nome": "Lagartixa",
+            "descricao": "Presentes ao redor do mundo, esses animais são ovíparos, e alimentam-se de pequenos insetos. Vive, preferivelmente, em locais úmidos.",
+            "reino": "Animal"
+        }
+    ]
+
+}
