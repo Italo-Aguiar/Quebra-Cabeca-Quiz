@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Scenes/Animal.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/menu_button.png" type="Texture" id=2]
@@ -6,32 +6,37 @@
 [ext_resource path="res://Sprites/MenuIndication/CardVerde.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/MenuIndication/CardMarrom.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/Lupa.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/Board-Puzzle.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/etapa_button.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/Descricao.png" type="Texture" id=9]
+[ext_resource path="res://Font/Roboto-Medium.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Sprites/Board-Puzzle.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/etapa_button.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Descricao.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/result_01.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/result_02.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/TileMap.gd" type="Script" id=13]
+[ext_resource path="res://Scenes/Peca.tscn" type="PackedScene" id=14]
 
 [sub_resource type="DynamicFont" id=1]
-size = 47
+size = 80
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 35
-font_data = ExtResource( 3 )
+size = 85
+font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 35
-font_data = ExtResource( 3 )
+size = 50
+font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=4]
-size = 37
-font_data = ExtResource( 3 )
+size = 75
+font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 37
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=6]
-size = 37
+size = 50
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=7]
@@ -53,130 +58,104 @@ font_data = ExtResource( 3 )
 [node name="Animal" type="Node2D"]
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_horizontal_guides_": [ 234.002 ],
+"_edit_horizontal_guides_": [  ],
 "_edit_vertical_guides_": [  ]
 }
 
-[node name="Background" type="ColorRect" parent="."]
-margin_right = 1920.0
-margin_bottom = 1080.0
+[node name="Title" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 526.28, 122.615 )
+scale = Vector2( 0.587678, 0.637009 )
+texture = ExtResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Title" type="TextureRect" parent="."]
-margin_left = 204.0
-margin_top = 83.0
-margin_right = 717.0
-margin_bottom = 159.0
-texture = ExtResource( 2 )
-expand = true
-
 [node name="Label" type="Label" parent="Title"]
-margin_right = 514.0
-margin_bottom = 76.0
+margin_left = -540.0
+margin_top = -63.0
+margin_right = 534.0
+margin_bottom = 60.0
 custom_fonts/font = SubResource( 1 )
 text = "Que animal é esse?"
 align = 1
 valign = 1
 
-[node name="CardVerde" type="TextureRect" parent="."]
-margin_left = 142.669
-margin_top = 83.0
-margin_right = 198.669
-margin_bottom = 160.0
+[node name="CardVerde" type="Sprite" parent="."]
+position = Vector2( 172.753, 123.64 )
+scale = Vector2( 0.38626, 0.421171 )
 texture = ExtResource( 4 )
-expand = true
 
-[node name="CardMarrom" type="TextureRect" parent="."]
-margin_left = 76.9849
-margin_top = 82.6673
-margin_right = 134.985
-margin_bottom = 162.667
+[node name="CardMarrom" type="Sprite" parent="."]
+position = Vector2( 105.752, 123.601 )
+scale = Vector2( 0.386286, 0.421349 )
 texture = ExtResource( 5 )
-expand = true
 
-[node name="Pontuacao" type="TextureRect" parent="."]
-margin_left = 1502.54
-margin_top = 65.1053
-margin_right = 1841.54
-margin_bottom = 126.105
+[node name="Pontuacao" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 1672.38, 95.5563 )
+scale = Vector2( 0.316558, 0.527926 )
 texture = ExtResource( 2 )
-expand = true
+
+[node name="Lupa" type="Sprite" parent="Pontuacao"]
+position = Vector2( -418.217, 3.59904 )
+scale = Vector2( 1.62266, 0.972992 )
+texture = ExtResource( 6 )
 
 [node name="Label" type="Label" parent="Pontuacao"]
-margin_left = 82.0
-margin_right = 339.0
-margin_bottom = 62.0
+margin_left = -233.935
+margin_top = -59.8091
+margin_right = 381.065
+margin_bottom = 64.1909
 custom_fonts/font = SubResource( 2 )
 text = "Pontuação: X"
 valign = 1
 
-[node name="Lupa" type="TextureRect" parent="Pontuacao"]
-margin_left = 8.0
-margin_top = 7.0
-margin_right = 56.0
-margin_bottom = 55.0
-texture = ExtResource( 6 )
-expand = true
-
-[node name="Board" type="TextureRect" parent="."]
-margin_left = 118.0
-margin_top = 234.0
-margin_right = 1140.0
-margin_bottom = 1005.0
-texture = ExtResource( 7 )
-expand = true
-
-[node name="TileMap" type="TileMap" parent="."]
-position = Vector2( 119.069, 235.039 )
-cell_size = Vector2( 340, 256 )
-format = 1
-
-[node name="Etapa" type="TextureRect" parent="."]
-margin_left = 1222.87
-margin_top = 290.591
-margin_right = 1336.87
-margin_bottom = 356.591
+[node name="Board" type="Sprite" parent="."]
+visible = false
+position = Vector2( 629.429, 618.685 )
+scale = Vector2( 1.49377, 1.90512 )
 texture = ExtResource( 8 )
-expand = true
-__meta__ = {
-"_edit_group_": true
-}
+
+[node name="Etapa" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 1280.11, 323.778 )
+scale = Vector2( 0.800409, 0.732779 )
+texture = ExtResource( 9 )
 
 [node name="Label" type="Label" parent="Etapa"]
-margin_right = 112.0
-margin_bottom = 68.0
+margin_left = -71.0
+margin_top = -45.0
+margin_right = 71.0
+margin_bottom = 45.0
 custom_fonts/font = SubResource( 3 )
 text = "1/2"
 align = 1
 valign = 1
 
-[node name="Monte" type="TextureRect" parent="."]
-margin_left = 1358.43
-margin_top = 288.442
-margin_right = 1789.43
-margin_bottom = 354.442
+[node name="Monte" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 1574.17, 321.013 )
+scale = Vector2( 0.400603, 0.54011 )
 texture = ExtResource( 2 )
-expand = true
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Label" type="Label" parent="Monte"]
-margin_right = 432.0
-margin_bottom = 66.0
+margin_left = -537.0
+margin_top = -62.0
+margin_right = 538.0
+margin_bottom = 63.0
 custom_fonts/font = SubResource( 4 )
 text = "Monte o quebra-cabeça"
 align = 1
 valign = 1
 
 [node name="Pular" type="TextureButton" parent="."]
+editor/display_folded = true
 margin_left = 1638.72
 margin_top = 390.593
 margin_right = 1783.72
 margin_bottom = 453.593
-texture_normal = ExtResource( 8 )
+texture_normal = ExtResource( 9 )
 expand = true
 __meta__ = {
 "_edit_group_": true
@@ -190,23 +169,18 @@ text = "Pular"
 align = 1
 valign = 1
 
-[node name="Descricao" type="TextureRect" parent="."]
+[node name="Descricao" type="Sprite" parent="."]
+editor/display_folded = true
 visible = false
-margin_left = 1182.37
-margin_top = 793.708
-margin_right = 1878.37
-margin_bottom = 998.708
-texture = ExtResource( 9 )
-expand = true
-__meta__ = {
-"_edit_group_": true
-}
+position = Vector2( 1530.67, 897.214 )
+scale = Vector2( 0.731662, 0.869225 )
+texture = ExtResource( 10 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Descricao"]
-margin_left = 13.0
-margin_top = 10.0
-margin_right = 690.0
-margin_bottom = 201.0
+margin_left = -460.0
+margin_top = -102.0
+margin_right = 454.0
+margin_bottom = 102.0
 custom_fonts/normal_font = SubResource( 6 )
 text = "Medindo cerca de 1,5cm de comprimento, esses platelmintos podem ser encontrados em córregos, lagos e lugares úmidos. Locomovem-se com ajuda de cílios e alimentam-se de moluscos, de outros vermes e de cadáveres de animais maiores, entre outros exemplos."
 
@@ -233,6 +207,16 @@ custom_fonts/font = SubResource( 7 )
 text = "Lagartixa"
 valign = 1
 
+[node name="Certo" type="Sprite" parent="Alternativas/A"]
+visible = false
+position = Vector2( -34, 27 )
+texture = ExtResource( 11 )
+
+[node name="Errado" type="Sprite" parent="Alternativas/A"]
+visible = false
+position = Vector2( -34, 27 )
+texture = ExtResource( 12 )
+
 [node name="B" type="TextureButton" parent="Alternativas"]
 margin_left = 735.0
 margin_top = 210.0
@@ -251,6 +235,16 @@ margin_bottom = 56.0
 custom_fonts/font = SubResource( 8 )
 text = "Minhoca"
 valign = 1
+
+[node name="Certo" type="Sprite" parent="Alternativas/B"]
+visible = false
+position = Vector2( -34, 27 )
+texture = ExtResource( 11 )
+
+[node name="Errado" type="Sprite" parent="Alternativas/B"]
+visible = false
+position = Vector2( -34, 27 )
+texture = ExtResource( 12 )
 
 [node name="C" type="TextureButton" parent="Alternativas"]
 margin_left = 735.302
@@ -271,6 +265,16 @@ custom_fonts/font = SubResource( 9 )
 text = "Protozoário"
 valign = 1
 
+[node name="Certo" type="Sprite" parent="Alternativas/C"]
+visible = false
+position = Vector2( -34, 27 )
+texture = ExtResource( 11 )
+
+[node name="Errado" type="Sprite" parent="Alternativas/C"]
+visible = false
+position = Vector2( -34, 27 )
+texture = ExtResource( 12 )
+
 [node name="D" type="TextureButton" parent="Alternativas"]
 margin_left = 735.0
 margin_top = 329.0
@@ -290,4 +294,25 @@ custom_fonts/font = SubResource( 10 )
 text = "Planária"
 valign = 1
 
+[node name="Certo" type="Sprite" parent="Alternativas/D"]
+visible = false
+position = Vector2( -34, 27 )
+texture = ExtResource( 11 )
+
+[node name="Errado" type="Sprite" parent="Alternativas/D"]
+visible = false
+position = Vector2( -34, 27 )
+texture = ExtResource( 12 )
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 118.306, 233.039 )
+cell_size = Vector2( 340, 256 )
+format = 1
+script = ExtResource( 13 )
+PECA = ExtResource( 14 )
+
 [connection signal="pressed" from="Pular" to="." method="_on_Pular_pressed"]
+[connection signal="pressed" from="Alternativas/A" to="." method="_on_A_pressed"]
+[connection signal="pressed" from="Alternativas/B" to="." method="_on_B_pressed"]
+[connection signal="pressed" from="Alternativas/C" to="." method="_on_C_pressed"]
+[connection signal="pressed" from="Alternativas/D" to="." method="_on_D_pressed"]

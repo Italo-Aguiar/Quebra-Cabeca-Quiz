@@ -7,6 +7,5 @@ func _ready():
 func _on_Animal_pressed():
 	get_tree().change_scene("res://Scenes/Animal.tscn")
 
-
 func _on_Reino_pressed():
 	get_tree().change_scene("res://Scenes/Reino.tscn")

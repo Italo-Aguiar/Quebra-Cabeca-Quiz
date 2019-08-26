@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Peca.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 170, 128 )
+
+[node name="Peca" type="Node2D"]
+position = Vector2( 0.00134659, 0.00781536 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 129.05, 256.798 ],
+"_edit_vertical_guides_": [ 340.858 ]
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 170.553, 129.009 )
+scale = Vector2( 0.999967, 1.00011 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 170.545, 129 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
