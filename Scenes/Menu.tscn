@@ -218,6 +218,5 @@ margin_right = 59.0
 margin_bottom = 57.0
 texture = ExtResource( 10 )
 expand = true
-
 [connection signal="pressed" from="Level1/Title" to="." method="_on_Animal_pressed"]
 [connection signal="pressed" from="Level2/Title" to="." method="_on_Reino_pressed"]
